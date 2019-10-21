@@ -2,8 +2,6 @@
 
 set -e
 
-echo "$(date) - Start"
-
-aws s3 sync /data s3://$BUCKET$BUCKET_PATH $PARAMS
-
-echo "$(date) End"
+echo "$(date) - S3 Sync Start"
+aws s3 sync $LOCAL_PATH s3://$BUCKET$BUCKET_PATH $PARAMS
+echo "$(date) - S3 Sync End"
